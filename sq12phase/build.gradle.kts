@@ -18,5 +18,4 @@ configureSignatures(publishing)
 attachRemoteRepositories()
 
 dependencies {
-    implementation(libs.logback.classic)
 }

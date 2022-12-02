@@ -4,9 +4,7 @@ import static org.worldcubeassociation.tnoodle.puzzle.NoInspectionFiveByFiveCube
 
 import java.util.Random;
 import org.worldcubeassociation.tnoodle.scrambles.PuzzleStateAndGenerator;
-import org.timepedia.exporter.client.Export;
 
-@Export
 public class NoInspectionThreeByThreeCubePuzzle extends ThreeByThreeCubePuzzle {
     public NoInspectionThreeByThreeCubePuzzle() {
         super();

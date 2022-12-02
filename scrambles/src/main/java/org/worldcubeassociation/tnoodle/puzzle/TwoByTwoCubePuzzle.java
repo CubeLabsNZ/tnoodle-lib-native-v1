@@ -8,9 +8,7 @@ import org.worldcubeassociation.tnoodle.scrambles.InvalidMoveException;
 import org.worldcubeassociation.tnoodle.scrambles.InvalidScrambleException;
 import org.worldcubeassociation.tnoodle.scrambles.PuzzleStateAndGenerator;
 import org.worldcubeassociation.tnoodle.puzzle.TwoByTwoSolver.TwoByTwoState;
-import org.timepedia.exporter.client.Export;
 
-@Export
 public class TwoByTwoCubePuzzle extends CubePuzzle {
     private static final int TWO_BY_TWO_MIN_SCRAMBLE_LENGTH = 11;
 

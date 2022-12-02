@@ -4,9 +4,7 @@ import java.util.Random;
 import org.worldcubeassociation.tnoodle.scrambles.PuzzleStateAndGenerator;
 import org.worldcubeassociation.tnoodle.scrambles.InvalidMoveException;
 import org.worldcubeassociation.tnoodle.scrambles.AlgorithmBuilder;
-import org.timepedia.exporter.client.Export;
 
-@Export
 public class NoInspectionFiveByFiveCubePuzzle extends CubePuzzle {
     public NoInspectionFiveByFiveCubePuzzle() {
         super(5);

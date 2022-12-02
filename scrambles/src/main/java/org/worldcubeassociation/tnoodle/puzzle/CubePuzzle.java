@@ -9,9 +9,7 @@ import java.util.*;
 
 import org.worldcubeassociation.tnoodle.scrambles.Puzzle;
 import org.worldcubeassociation.tnoodle.puzzle.TwoByTwoSolver.TwoByTwoState;
-import org.timepedia.exporter.client.Export;
 
-@Export
 public class CubePuzzle extends Puzzle {
 
     public enum Face {

@@ -1,13 +1,8 @@
 package cs.sq12phase;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.Arrays;
 
 class Shape {
-    private static Logger logger = LoggerFactory.getLogger(Shape.class);
-
     //1 = corner, 0 = edge.
     static int[] halflayer = {0x00, 0x03, 0x06, 0x0c, 0x0f, 0x18, 0x1b, 0x1e,
                               0x30, 0x33, 0x36, 0x3c, 0x3f
@@ -100,7 +95,6 @@ class Shape {
         while (done != done0) {
             done0 = done;
             ++depth;
-            logger.debug(String.format("%2d%6d", depth, done));
             for (int i = 0; i < 3678 * 2; i++) {
                 if (Prun[i] != depth) {
                     continue;
@@ -171,7 +165,6 @@ class Shape {
                 ShapeIdx[count++] = value;
             }
         }
-        logger.debug(String.valueOf(count));
         Shape s = new Shape();
         for (int i = 0; i < 3678 * 2; i++) {
             s.setIdx(i);

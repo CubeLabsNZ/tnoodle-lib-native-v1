@@ -1,8 +1,5 @@
 package cs.threephase;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.Arrays;
 import static cs.threephase.Util.*;
 
@@ -22,8 +19,6 @@ import static cs.threephase.Util.*;
  */
 
 public class Edge3 {
-    private static Logger logger = LoggerFactory.getLogger(Edge3.class);
-
     static final boolean IS_64BIT_PLATFORM = true;
 
 	static final int N_SYM = 1538;
@@ -232,7 +227,6 @@ public class Edge3 {
 				}
 			}
 			depth++;
-			logger.debug(depth + "\t" + done);
 		}
 	}
 

@@ -14,9 +14,7 @@ import org.worldcubeassociation.tnoodle.scrambles.InvalidScrambleException;
 import org.worldcubeassociation.tnoodle.scrambles.Puzzle;
 import org.worldcubeassociation.tnoodle.scrambles.PuzzleStateAndGenerator;
 
-import org.timepedia.exporter.client.Export;
 
-@Export
 public class MegaminxPuzzle extends Puzzle {
     private enum Face {
         U, BL, BR, R, F, L, D, DR, DBR, B, DBL, DL;

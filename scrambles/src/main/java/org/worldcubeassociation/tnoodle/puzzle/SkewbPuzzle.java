@@ -15,9 +15,7 @@ import org.worldcubeassociation.tnoodle.scrambles.InvalidScrambleException;
 import org.worldcubeassociation.tnoodle.scrambles.Puzzle;
 import org.worldcubeassociation.tnoodle.scrambles.PuzzleStateAndGenerator;
 
-import org.timepedia.exporter.client.Export;
 
-@Export
 public class SkewbPuzzle extends Puzzle {
     private static final int MIN_SCRAMBLE_LENGTH = 11;
     private static final Logger l = Logger.getLogger(SkewbPuzzle.class.getName());

@@ -1,8 +1,5 @@
 package cs.threephase;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import static cs.threephase.Util.*;
 import static cs.threephase.Moves.*;
 
@@ -19,8 +16,6 @@ import java.util.*;
 */
 
 final class Center1 {
-    private static Logger logger = LoggerFactory.getLogger(Center1.class);
-
 	static int[][] ctsmv = new int[15582][36];
 	static int[] sym2raw = new int[15582];
 	static byte[] csprun = new byte[15582];
@@ -91,7 +86,6 @@ final class Center1 {
 	}
 
 	static void createMoveTable() {
-		logger.info("Create Phase1 Center Move Table...");
 		Center1 c = new Center1();
 		Center1 d = new Center1();
 		for (int i=0; i<15582; i++) {

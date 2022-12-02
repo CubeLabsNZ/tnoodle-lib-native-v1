@@ -13,9 +13,6 @@
  */
 package cs.threephase;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import static cs.threephase.Moves.*;
 import static cs.threephase.Util.*;
 import static cs.threephase.Center2.rlmv;
@@ -30,8 +27,6 @@ import static cs.threephase.Center1.symmove;
 import java.util.*;
 
 public class Search {
-    private static Logger logger = LoggerFactory.getLogger(Search.class);
-
 	static final int PHASE1_SOLUTIONS = 10000;
 	static final int PHASE2_ATTEMPTS = 500;
 	static final int PHASE2_SOLUTIONS = 100;
@@ -82,8 +77,6 @@ public class Search {
 		}
 		cs.min2phase.Search.init();
 
-		logger.info("Initialize Center1 Solver...");
-
 		Center1.initSym();
 		Center1.raw2sym = new int[735471];
 		Center1.initSym2Raw();
@@ -91,21 +84,13 @@ public class Search {
 		Center1.raw2sym = null;
 		Center1.createPrun();
 
-		logger.info("Initialize Center2 Solver...");
-
 		Center2.init();
 
-		logger.info("Initialize Center3 Solver...");
-
 		Center3.init();
-
-		logger.info("Initialize Edge3 Solver...");
 
 		Edge3.initMvrot();
 		Edge3.initRaw2Sym();
 		Edge3.createPrun();
-
-		logger.info("OK");
 
 		inited = true;
 	}

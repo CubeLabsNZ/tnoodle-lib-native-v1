@@ -28,8 +28,6 @@ dependencies {
     implementation(project(":min2phase"))
     implementation(project(":threephase"))
     implementation(project(":sq12phase"))
-
-    api(libs.gwt.exporter)
 }
 
 configureJUnit5()

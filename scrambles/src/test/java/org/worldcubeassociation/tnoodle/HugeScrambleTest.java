@@ -20,8 +20,6 @@ import org.worldcubeassociation.tnoodle.puzzle.MegaminxPuzzle;
 import org.worldcubeassociation.tnoodle.puzzle.TwoByTwoSolver;
 import org.worldcubeassociation.tnoodle.puzzle.TwoByTwoSolver.TwoByTwoState;
 import org.junit.jupiter.api.Test;
-import org.timepedia.exporter.client.Export;
-import org.timepedia.exporter.client.Exportable;
 
 public class HugeScrambleTest {
     private static final Logger l = Logger.getLogger(HugeScrambleTest.class.getName());
@@ -177,30 +175,6 @@ public class HugeScrambleTest {
         }
         lh.setObjectToLock(null);
         System.out.println("\nTest passed!");
-    }
-
-    @Test
-    public void testNames() {
-        // Check that the names by which the scramblers refer to themselves
-        // is the same as the names by which we refer to them in the plugin definitions file.
-        for(PuzzleRegistry lazyScrambler : PuzzleRegistry.values()) {
-            String shortName = lazyScrambler.getKey();
-            Puzzle scrambler = lazyScrambler.getScrambler();
-
-            assertEquals(shortName, scrambler.getShortName());
-
-            System.out.println(Exportable.class + " isAssignableFrom " + scrambler.getClass());
-            assertTrue(Exportable.class.isAssignableFrom(scrambler.getClass()));
-            Annotation[] annotations = scrambler.getClass().getAnnotations();
-            boolean foundExport = false;
-            for(Annotation annotation : annotations) {
-                if(Export.class.isAssignableFrom(annotation.annotationType())) {
-                    foundExport = true;
-                    break;
-                }
-            }
-            assertTrue(foundExport);
-        }
     }
 
     @Test

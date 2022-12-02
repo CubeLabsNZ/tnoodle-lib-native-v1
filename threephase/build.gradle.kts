@@ -19,5 +19,4 @@ attachRemoteRepositories()
 
 dependencies {
     implementation(project(":min2phase"))
-    implementation(libs.logback.classic)
 }

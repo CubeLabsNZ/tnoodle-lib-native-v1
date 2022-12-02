@@ -12,9 +12,7 @@ import java.util.*;
 
 import cs.sq12phase.FullCube;
 import cs.sq12phase.Search;
-import org.timepedia.exporter.client.Export;
 
-@Export
 public class SquareOnePuzzle extends Puzzle {
 
     private static final int radius = 32;

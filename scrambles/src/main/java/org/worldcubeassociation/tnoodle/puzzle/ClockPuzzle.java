@@ -9,9 +9,7 @@ import org.worldcubeassociation.tnoodle.scrambles.InvalidScrambleException;
 import org.worldcubeassociation.tnoodle.scrambles.Puzzle;
 import org.worldcubeassociation.tnoodle.scrambles.PuzzleStateAndGenerator;
 
-import org.timepedia.exporter.client.Export;
 
-@Export
 public class ClockPuzzle extends Puzzle {
     private static final Logger l = Logger.getLogger(ClockPuzzle.class.getName());
 

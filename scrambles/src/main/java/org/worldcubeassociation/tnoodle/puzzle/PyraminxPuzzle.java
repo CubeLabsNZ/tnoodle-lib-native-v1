@@ -16,9 +16,7 @@ import org.worldcubeassociation.tnoodle.scrambles.InvalidScrambleException;
 import org.worldcubeassociation.tnoodle.scrambles.Puzzle;
 import org.worldcubeassociation.tnoodle.scrambles.PuzzleStateAndGenerator;
 
-import org.timepedia.exporter.client.Export;
 
-@Export
 public class PyraminxPuzzle extends Puzzle {
     private static final Logger l = Logger.getLogger(PyraminxPuzzle.class.getName());
 

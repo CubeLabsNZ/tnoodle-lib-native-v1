@@ -1,14 +1,9 @@
 package cs.threephase;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.*;
 import java.util.Random;
 
 public class Tools {
-    private static Logger logger = LoggerFactory.getLogger(Tools.class);
-
 	private static void read(int[] arr, DataInput in) throws IOException {
 		for (int i=0, len=arr.length; i<len; i++) {
 			arr[i] = in.readInt();
@@ -59,29 +54,19 @@ public class Tools {
 			return;
 		}
 
-		logger.info("Initialize Center1 Solver...");
-
 		Center1.initSym();
 		Center1.initSym2Raw();
 		read(Center1.ctsmv, in);
 		Center1.createPrun();
 
-		logger.info("Initialize Center2 Solver...");
-
 		Center2.init();
 
-		logger.info("Initialize Center3 Solver...");
-
 		Center3.init();
-
-		logger.info("Initialize Edge3 Solver...");
 
 		Edge3.initMvrot();
 		Edge3.initRaw2Sym();
 		read(Edge3.eprun, in);
 		Edge3.done = Edge3.N_EPRUN;
-
-		logger.info("OK");
 
 		Search.inited = true;
 	}

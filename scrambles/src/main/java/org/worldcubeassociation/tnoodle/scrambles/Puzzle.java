@@ -16,10 +16,6 @@ import java.util.logging.Logger;
 
 import org.worldcubeassociation.tnoodle.scrambles.AlgorithmBuilder.MergingMode;
 
-import org.timepedia.exporter.client.Export;
-import org.timepedia.exporter.client.ExportClosure;
-import org.timepedia.exporter.client.Exportable;
-import org.timepedia.exporter.client.NoExport;
 
 import static java.lang.Math.ceil;
 
@@ -35,8 +31,7 @@ import static java.lang.Math.ceil;
  * @author jeremy
  *
  */
-@ExportClosure
-public abstract class Puzzle implements Exportable {
+public abstract class Puzzle {
     private static final Logger l = Logger.getLogger(Puzzle.class.getName());
     protected int wcaMinScrambleDistance = 2;
 
@@ -45,7 +40,6 @@ public abstract class Puzzle implements Exportable {
      * appropriate for use in a url. This shouldn't contain any periods.
      * @return a url appropriate String unique to this Scrambler
      */
-    @Export
     public abstract String getShortName();
 
     /**
@@ -54,7 +48,6 @@ public abstract class Puzzle implements Exportable {
      * This will also be used for the toString method of this Scrambler.
      * @return a String
      */
-    @Export
     public abstract String getLongName();
 
     /**
@@ -123,11 +116,9 @@ public abstract class Puzzle implements Exportable {
         }
     }
 
-    @Export
     public final String generateScramble() {
         return generateWcaScramble(r);
     }
-    @Export
     public final String[] generateScrambles(int count) {
         return generateScrambles(r, count);
     }
@@ -138,11 +129,9 @@ public abstract class Puzzle implements Exportable {
      * @param seed The seed to be used for generating this scramble
      * @return A scramble similar to {@link #generateScramble}, except that it is guaranteed to be based on {@code seed}
      */
-    @Export
     public final String generateSeededScramble(String seed) {
         return generateSeededScramble(seed.getBytes());
     }
-    @Export
     public final String[] generateSeededScrambles(String seed, int count) {
         return generateSeededScrambles(seed.getBytes(), count);
     }
@@ -172,7 +161,6 @@ public abstract class Puzzle implements Exportable {
     /**
      * @return Simply returns getLongName()
      */
-    @Export
     public String toString() {
         return getLongName();
     }
@@ -181,7 +169,6 @@ public abstract class Puzzle implements Exportable {
      * TODO - document! alphabetical
      * @return TODO, see above
      */
-    @Export
     public String[] getFaceNames() {
         return getDefaultColorScheme().keySet().stream()
             .sorted()
@@ -270,7 +257,6 @@ public abstract class Puzzle implements Exportable {
      * @param maxHeight The maximum allowed height of the resulting image, 0 if it doesn't matter.
      * @return The best size of the resulting image, constrained to maxWidth and maxHeight.
      */
-    @Export
     public Dimension getPreferredSize(int maxWidth, int maxHeight) {
         if(maxWidth == 0 && maxHeight == 0) {
             return getPreferredSize();
@@ -835,7 +821,6 @@ public abstract class Puzzle implements Exportable {
      * @return A PuzzleStateAndGenerator that contains a scramble string, and the
      *         state achieved by applying that scramble.
      */
-    @NoExport
     public PuzzleStateAndGenerator generateRandomMoves(Random r) {
         AlgorithmBuilder ab = new AlgorithmBuilder(
                 this, MergingMode.NO_MERGING);

@@ -10,9 +10,7 @@ import org.worldcubeassociation.tnoodle.scrambles.InvalidScrambleException;
 import org.worldcubeassociation.tnoodle.scrambles.PuzzleStateAndGenerator;
 import cs.min2phase.SearchWCA;
 import cs.min2phase.Tools;
-import org.timepedia.exporter.client.Export;
 
-@Export
 public class ThreeByThreeCubePuzzle extends CubePuzzle {
     private static final Logger l = Logger.getLogger(ThreeByThreeCubePuzzle.class.getName());
     private static final int THREE_BY_THREE_MAX_SCRAMBLE_LENGTH = 21;

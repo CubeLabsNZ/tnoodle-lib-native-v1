@@ -2,8 +2,6 @@
 junit-jupiter = "5.9.1"
 
 [libraries]
-logback-classic = { module = "ch.qos.logback:logback-classic", version = "1.4.4" }
-gwt-exporter = { module = "org.timepedia.exporter:gwtexporter", version = "2.5.1" }
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit-jupiter" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit-jupiter" }
 apache-commons-math3 = { module = "org.apache.commons:commons-math3", version = "3.6.1" }
