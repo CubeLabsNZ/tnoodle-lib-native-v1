@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- This module was also published with a richer model, Gradle metadata,  -->
+  <!-- which should be used instead. Do not delete the following line which  -->
+  <!-- is to indicate to Gradle or any Gradle module metadata file consumer  -->
+  <!-- that they should prefer consuming it instead. -->
+  <!-- do_not_remove: published-with-gradle-metadata -->
+  <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.worldcubeassociation.tnoodle</groupId>
+        <artifactId>parent</artifactId>
+        <version>0.18.1</version>
+    </parent>
+
+  <groupId>org.worldcubeassociation.tnoodle</groupId>
+  <artifactId>lib-svglite</artifactId>
+  <version>0.18.1</version>
+  <name>lib-svglite</name>
+  <description>A dead simple svg generation library written in pure Java, with no dependencies. This code runs on both desktop Java, Android, and compiles to Javascript with GWT.</description>
+  <url>https://www.worldcubeassociation.org/regulations/scrambles/</url>
+  <licenses>
+    <license>
+      <name>GPL-v3.0</name>
+      <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>thewca</id>
+      <name>WCA Software Team</name>
+      <email>software@worldcubeassociation.org</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git://github.com/thewca/tnoodle-lib.git</connection>
+    <developerConnection>scm:git:git@github.com:thewca/tnoodle-lib.git</developerConnection>
+    <url>https://github.com/thewca/tnoodle-lib</url>
+  </scm>
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
+        </plugin>
+    </plugins>
+</build>
+<properties>
+     <maven.compiler.source>17</maven.compiler.source>
+     <maven.compiler.target>17</maven.compiler.target>
+</properties>
+</project>

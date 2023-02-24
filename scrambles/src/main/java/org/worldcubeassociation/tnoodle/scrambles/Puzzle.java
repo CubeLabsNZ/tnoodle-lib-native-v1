@@ -8,7 +8,6 @@ import org.worldcubeassociation.tnoodle.svglite.Group;
 import org.worldcubeassociation.tnoodle.svglite.Element;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
-import java.security.SecureRandom;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.logging.Level;
@@ -101,20 +100,7 @@ public abstract class Puzzle {
         return scrambles;
     }
 
-    private SecureRandom r = getSecureRandom();
-    public static final SecureRandom getSecureRandom() {
-        try {
-            try {
-                return SecureRandom.getInstance("SHA1PRNG", "SUN");
-            } catch(NoSuchProviderException e) {
-                l.log(Level.SEVERE, "Couldn't get SecureRandomInstance", e);
-                return SecureRandom.getInstance("SHA1PRNG");
-            }
-        } catch(NoSuchAlgorithmException e) {
-            l.log(Level.SEVERE, "Couldn't get SecureRandomInstance", e);
-            throw new RuntimeException(e);
-        }
-    }
+    private Random r = new Random();
 
     public final String generateScramble() {
         return generateWcaScramble(r);
@@ -129,14 +115,7 @@ public abstract class Puzzle {
      * @param seed The seed to be used for generating this scramble
      * @return A scramble similar to {@link #generateScramble}, except that it is guaranteed to be based on {@code seed}
      */
-    public final String generateSeededScramble(String seed) {
-        return generateSeededScramble(seed.getBytes());
-    }
-    public final String[] generateSeededScrambles(String seed, int count) {
-        return generateSeededScrambles(seed.getBytes(), count);
-    }
-
-    private String generateSeededScramble(byte[] seed) {
+    public String generateSeededScramble(long seed) {
         // We must create our own Random because
         // other threads can access the static one.
         // Also, setSeed supplements an existing seed,
@@ -144,16 +123,16 @@ public abstract class Puzzle {
         // TODO - consider using something other than SecureRandom for seeded scrambles,
         // because we really, really want this to be portable across platforms (desktop java, gwt, and android)
         // https://github.com/thewca/tnoodle/issues/146
-        SecureRandom r = getSecureRandom();
+        Random r = new Random();
         r.setSeed(seed);
         return generateWcaScramble(r);
     }
-    private String[] generateSeededScrambles(byte[] seed, int count) {
+    public String[] generateSeededScrambles(long seed, int count) {
         // We must create our own Random because
         // other threads can access the static one.
         // Also, setSeed supplements an existing seed,
         // rather than replacing it.
-        SecureRandom r = getSecureRandom();
+        Random r = new Random();
         r.setSeed(seed);
         return generateScrambles(r, count);
     }

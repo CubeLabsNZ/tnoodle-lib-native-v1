@@ -22,3 +22,5 @@ tnoodle_pruning_cache/
 version.tnoodle
 gradle.properties
 **/*.gpg
+.DS_Store
+target/

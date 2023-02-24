@@ -1,6 +1,5 @@
 package org.worldcubeassociation.tnoodle.scrambles;
 
-import java.security.SecureRandom;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -14,11 +13,7 @@ public class ScrambleCacher {
     private static final Logger l = Logger.getLogger(ScrambleCacher.class.getName());
     private static final int DEFAULT_CACHE_SIZE = 100;
 
-    /**
-     * Puzzles will get passed this instance of Random
-     * in order to have nice, as-secure-as-can-be scrambles.
-     */
-    private static final Random r = new SecureRandom();
+    private static final Random r = new Random();
 
     private final String[] scrambles;
     private volatile int startBuf = 0;
